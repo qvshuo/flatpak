@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>do.craft.docs</id>
+  
+  <name>Craft</name>
+  <summary>The Future of Documents.</summary>
+  
+  <metadata_license>MIT</metadata_license>
+  <project_license>CC-BY-4.0</project_license>
+  
+  <description>
+    <p>
+      Craft the best docs in the world.
+    </p>
+  </description>
+  
+  <launchable type="desktop-id">do.craft.docs.desktop</launchable>
+</component>

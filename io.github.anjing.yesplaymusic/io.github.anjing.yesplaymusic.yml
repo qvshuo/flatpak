@@ -1,0 +1,68 @@
+id: io.github.anjing.yesplaymusic
+runtime: org.freedesktop.Platform
+runtime-version: "24.08"
+sdk: org.freedesktop.Sdk
+base: org.electronjs.Electron2.BaseApp
+base-version: "24.08"
+sdk-extensions:
+  - org.freedesktop.Sdk.Extension.node22
+command: yesplaymusic
+separate-locales: false
+
+finish-args:
+  - --device=dri
+  - --share=ipc
+  - --share=network
+  - --socket=pulseaudio
+  - --socket=x11
+  - --env=ELECTRON_TRASH=gio
+  - --own-name=org.mpris.MediaPlayer2.chromium.*
+
+build-options:
+  append-path: /usr/lib/sdk/node22/bin
+  env:
+    NPM_CONFIG_LOGLEVEL: info
+
+modules:
+  - name: YesPlayMusic
+    buildsystem: simple
+    build-options:
+      env:
+        XDG_CACHE_HOME: /run/build/YesPlayMusic/flatpak-node/cache
+        npm_config_cache: /run/build/YesPlayMusic/flatpak-node/npm-cache
+        npm_config_offline: "true"
+    build-commands:
+      - npm install --offline
+      - npx electron-packager . --platform=linux --arch=x64 --out=dist
+      - cp -a dist/io.github.anjing.yesplaymusic-linux-x64 /app/main
+      - install -Dm755 yesplaymusic.sh /app/bin/yesplaymusic
+      - install -Dm644 io.github.anjing.yesplaymusic.desktop /app/share/applications/io.github.anjing.yesplaymusic.desktop
+      - install -Dm644 io.github.anjing.yesplaymusic.png /app/share/icons/hicolor/512x512/apps/io.github.anjing.yesplaymusic.png
+      - install -Dm644 io.github.anjing.yesplaymusic.metainfo.xml /app/share/metainfo/io.github.anjing.yesplaymusic.metainfo.xml
+
+    sources:
+      - type: file
+        path: index.js
+
+      - type: file
+        path: package.json
+
+      - type: file
+        path: package-lock.json
+
+      - generated-sources.json
+
+      - type: script
+        dest-filename: yesplaymusic.sh
+        commands:
+          - export TMPDIR="$XDG_RUNTIME_DIR/app/$FLATPAK_ID"
+          - zypak-wrapper.sh /app/main/io.github.anjing.yesplaymusic "$@"
+
+      - type: file
+        path: io.github.anjing.yesplaymusic.desktop
+
+      - type: file
+        path: io.github.anjing.yesplaymusic.png
+
+      - type: file
+        path: io.github.anjing.yesplaymusic.metainfo.xml

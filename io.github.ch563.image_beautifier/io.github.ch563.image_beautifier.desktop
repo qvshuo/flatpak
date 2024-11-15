@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+
+Name=Image Beautifier
+Comment=Screenshot enhancement tool.
+Categories=Graphics;
+
+Icon=io.github.ch563.image_beautifier
+Exec=image_beautifier
+StartupWMClass=io.github.ch563.image_beautifier
+Terminal=false

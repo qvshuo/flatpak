@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.ch563.image_beautifier</id>
+  
+  <name>Image Beautifier</name>
+  <summary>Screenshot enhancement tool.</summary>
+  
+  <metadata_license>MIT</metadata_license>
+  <project_license>MIT</project_license>
+  
+  <description>
+    <p>
+      Online screenshot enhancement tool that supports adding annotations, cropping, local zooming, and more, with predefined social media dimensions and high-resolution export options.
+    </p>
+  </description>
+  
+  <launchable type="desktop-id">io.github.ch563.image_beautifier.desktop</launchable>
+</component>

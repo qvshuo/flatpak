@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.anjing.yesplaymusic</id>
+  
+  <name>YesPlayMusic</name>
+  <summary>High-aesthetic third-party NetEase Cloud Music.</summary>
+  
+  <metadata_license>MIT</metadata_license>
+  <project_license>MIT</project_license>
+  
+  <description>
+    <p>
+      High-aesthetic third-party NetEase Cloud Music.
+    </p>
+  </description>
+  
+  <launchable type="desktop-id">io.github.anjing.yesplaymusic.desktop</launchable>
+</component>

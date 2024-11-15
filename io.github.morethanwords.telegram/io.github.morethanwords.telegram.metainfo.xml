@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.morethanwords.telegram</id>
+
+  <name>Telegram</name>
+  <summary>Telegram Web K, GPL v3.</summary>
+
+  <metadata_license>MIT</metadata_license>
+  <project_license>GPL-3.0-only</project_license>
+
+  <description>
+    <p>
+      Based on Webogram, patched and improved.
+    </p>
+  </description>
+
+  <launchable type="desktop-id">io.github.morethanwords.telegram.desktop</launchable>
+</component>

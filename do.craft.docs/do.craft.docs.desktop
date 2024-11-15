@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+
+Name=Craft
+Comment=The Future of Documents.
+Categories=Office;
+
+Icon=do.craft.docs
+Exec=craft
+StartupWMClass=do.craft.docs
+Terminal=false

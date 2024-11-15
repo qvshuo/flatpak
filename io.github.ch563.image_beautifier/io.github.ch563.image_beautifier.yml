@@ -1,0 +1,69 @@
+id: io.github.ch563.image_beautifier
+runtime: org.freedesktop.Platform
+runtime-version: "24.08"
+sdk: org.freedesktop.Sdk
+base: org.electronjs.Electron2.BaseApp
+base-version: "24.08"
+sdk-extensions:
+  - org.freedesktop.Sdk.Extension.node22
+command: image_beautifier
+separate-locales: false
+
+finish-args:
+  - --device=dri
+  - --share=ipc
+  - --share=network
+  - --socket=pulseaudio
+  - --socket=x11
+  - --filesystem=xdg-pictures:ro
+  - --filesystem=xdg-download
+  - --env=ELECTRON_TRASH=gio
+
+build-options:
+  append-path: /usr/lib/sdk/node22/bin
+  env:
+    NPM_CONFIG_LOGLEVEL: info
+
+modules:
+  - name: ImageBeautifier
+    buildsystem: simple
+    build-options:
+      env:
+        XDG_CACHE_HOME: /run/build/ImageBeautifier/flatpak-node/cache
+        npm_config_cache: /run/build/ImageBeautifier/flatpak-node/npm-cache
+        npm_config_offline: "true"
+    build-commands:
+      - npm install --offline
+      - npx electron-packager . --platform=linux --arch=x64 --out=dist
+      - cp -a dist/io.github.ch563.image_beautifier-linux-x64 /app/main
+      - install -Dm755 image_beautifier.sh /app/bin/image_beautifier
+      - install -Dm644 io.github.ch563.image_beautifier.desktop /app/share/applications/io.github.ch563.image_beautifier.desktop
+      - install -Dm644 io.github.ch563.image_beautifier.png /app/share/icons/hicolor/512x512/apps/io.github.ch563.image_beautifier.png
+      - install -Dm644 io.github.ch563.image_beautifier.metainfo.xml /app/share/metainfo/io.github.ch563.image_beautifier.metainfo.xml
+
+    sources:
+      - type: file
+        path: index.js
+
+      - type: file
+        path: package.json
+
+      - type: file
+        path: package-lock.json
+
+      - generated-sources.json
+
+      - type: script
+        dest-filename: image_beautifier.sh
+        commands:
+          - export TMPDIR="$XDG_RUNTIME_DIR/app/$FLATPAK_ID"
+          - zypak-wrapper.sh /app/main/io.github.ch563.image_beautifier "$@"
+
+      - type: file
+        path: io.github.ch563.image_beautifier.desktop
+
+      - type: file
+        path: io.github.ch563.image_beautifier.png
+
+      - type: file
+        path: io.github.ch563.image_beautifier.metainfo.xml

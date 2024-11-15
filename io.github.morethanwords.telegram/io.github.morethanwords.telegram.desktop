@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+
+Name=Telegram
+Comment=Telegram Web K, GPL v3.
+Categories=Network;
+
+Icon=io.github.morethanwords.telegram
+Exec=telegram
+StartupWMClass=io.github.morethanwords.telegram
+Terminal=false

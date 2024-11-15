@@ -1,0 +1,69 @@
+id: com.excalidraw.excalidraw
+runtime: org.freedesktop.Platform
+runtime-version: "24.08"
+sdk: org.freedesktop.Sdk
+base: org.electronjs.Electron2.BaseApp
+base-version: "24.08"
+sdk-extensions:
+  - org.freedesktop.Sdk.Extension.node22
+command: excalidraw
+separate-locales: false
+
+finish-args:
+  - --device=dri
+  - --share=ipc
+  - --share=network
+  - --socket=pulseaudio
+  - --socket=x11
+  - --filesystem=xdg-pictures:ro
+  - --filesystem=xdg-download
+  - --env=ELECTRON_TRASH=gio
+
+build-options:
+  append-path: /usr/lib/sdk/node22/bin
+  env:
+    NPM_CONFIG_LOGLEVEL: info
+
+modules:
+  - name: Excalidraw
+    buildsystem: simple
+    build-options:
+      env:
+        XDG_CACHE_HOME: /run/build/Excalidraw/flatpak-node/cache
+        npm_config_cache: /run/build/Excalidraw/flatpak-node/npm-cache
+        npm_config_offline: "true"
+    build-commands:
+      - npm install --offline
+      - npx electron-packager . --platform=linux --arch=x64 --out=dist
+      - cp -a dist/com.excalidraw.excalidraw-linux-x64 /app/main
+      - install -Dm755 excalidraw.sh /app/bin/excalidraw
+      - install -Dm644 com.excalidraw.excalidraw.desktop /app/share/applications/com.excalidraw.excalidraw.desktop
+      - install -Dm644 com.excalidraw.excalidraw.png /app/share/icons/hicolor/256x256/apps/com.excalidraw.excalidraw.png
+      - install -Dm644 com.excalidraw.excalidraw.metainfo.xml /app/share/metainfo/com.excalidraw.excalidraw.metainfo.xml
+
+    sources:
+      - type: file
+        path: index.js
+
+      - type: file
+        path: package.json
+
+      - type: file
+        path: package-lock.json
+
+      - generated-sources.json
+
+      - type: script
+        dest-filename: excalidraw.sh
+        commands:
+          - export TMPDIR="$XDG_RUNTIME_DIR/app/$FLATPAK_ID"
+          - zypak-wrapper.sh /app/main/com.excalidraw.excalidraw "$@"
+
+      - type: file
+        path: com.excalidraw.excalidraw.desktop
+
+      - type: file
+        path: com.excalidraw.excalidraw.png
+
+      - type: file
+        path: com.excalidraw.excalidraw.metainfo.xml

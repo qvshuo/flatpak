@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+
+Name=Excalidraw
+Comment=Virtual whiteboard for sketching hand-drawn like diagrams.
+Categories=Office;
+
+Icon=com.excalidraw.excalidraw
+Exec=excalidraw
+StartupWMClass=com.excalidraw.excalidraw
+Terminal=false

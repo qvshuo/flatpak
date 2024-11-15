@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+
+Name=YesPlayMusic
+Comment=High-aesthetic third-party NetEase Cloud Music.
+Categories=AudioVideo;
+
+Icon=io.github.anjing.yesplaymusic
+Exec=yesplaymusic
+StartupWMClass=io.github.anjing.yesplaymusic
+Terminal=false
