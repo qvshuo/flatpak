@@ -1,4 +1,4 @@
-# Anjing's flatpak repository.
+# Anjing's flatpak repository
 
 ## Usage
 
