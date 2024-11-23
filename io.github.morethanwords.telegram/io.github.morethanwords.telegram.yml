@@ -48,29 +48,21 @@ modules:
     sources:
       - type: file
         path: index.js
-
       - type: file
         path: preload.js
-
       - type: file
         path: package.json
-
       - type: file
         path: package-lock.json
-
       - generated-sources.json
-
       - type: script
         dest-filename: telegram.sh
         commands:
           - export TMPDIR="$XDG_RUNTIME_DIR/app/$FLATPAK_ID"
           - zypak-wrapper.sh /app/main/io.github.morethanwords.telegram "$@"
-
       - type: file
         path: io.github.morethanwords.telegram.desktop
-
       - type: file
         path: io.github.morethanwords.telegram.png
-
       - type: file
         path: io.github.morethanwords.telegram.metainfo.xml

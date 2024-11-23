@@ -44,26 +44,19 @@ modules:
     sources:
       - type: file
         path: index.js
-
       - type: file
         path: package.json
-
       - type: file
         path: package-lock.json
-
       - generated-sources.json
-
       - type: script
         dest-filename: excalidraw.sh
         commands:
           - export TMPDIR="$XDG_RUNTIME_DIR/app/$FLATPAK_ID"
           - zypak-wrapper.sh /app/main/com.excalidraw.excalidraw "$@"
-
       - type: file
         path: com.excalidraw.excalidraw.desktop
-
       - type: file
         path: com.excalidraw.excalidraw.png
-
       - type: file
         path: com.excalidraw.excalidraw.metainfo.xml

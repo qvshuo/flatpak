@@ -46,26 +46,19 @@ modules:
     sources:
       - type: file
         path: index.js
-
       - type: file
         path: package.json
-
       - type: file
         path: package-lock.json
-
       - generated-sources.json
-
       - type: script
         dest-filename: craft.sh
         commands:
           - export TMPDIR="$XDG_RUNTIME_DIR/app/$FLATPAK_ID"
           - zypak-wrapper.sh /app/main/do.craft.docs "$@"
-
       - type: file
         path: do.craft.docs.desktop
-
       - type: file
         path: do.craft.docs.png
-
       - type: file
         path: do.craft.docs.metainfo.xml

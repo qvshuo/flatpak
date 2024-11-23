@@ -44,26 +44,19 @@ modules:
     sources:
       - type: file
         path: index.js
-
       - type: file
         path: package.json
-
       - type: file
         path: package-lock.json
-
       - generated-sources.json
-
       - type: script
         dest-filename: image_beautifier.sh
         commands:
           - export TMPDIR="$XDG_RUNTIME_DIR/app/$FLATPAK_ID"
           - zypak-wrapper.sh /app/main/io.github.ch563.image_beautifier "$@"
-
       - type: file
         path: io.github.ch563.image_beautifier.desktop
-
       - type: file
         path: io.github.ch563.image_beautifier.png
-
       - type: file
         path: io.github.ch563.image_beautifier.metainfo.xml

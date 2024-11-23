@@ -43,26 +43,19 @@ modules:
     sources:
       - type: file
         path: index.js
-
       - type: file
         path: package.json
-
       - type: file
         path: package-lock.json
-
       - generated-sources.json
-
       - type: script
         dest-filename: yesplaymusic.sh
         commands:
           - export TMPDIR="$XDG_RUNTIME_DIR/app/$FLATPAK_ID"
           - zypak-wrapper.sh /app/main/io.github.anjing.yesplaymusic "$@"
-
       - type: file
         path: io.github.anjing.yesplaymusic.desktop
-
       - type: file
         path: io.github.anjing.yesplaymusic.png
-
       - type: file
         path: io.github.anjing.yesplaymusic.metainfo.xml
