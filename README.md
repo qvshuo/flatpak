@@ -36,7 +36,6 @@ flatpak run org.flatpak.Builder --install-deps-from=flathub --force-clean --user
 To install YesPlayMusic, run:
 
 ```sh
-cd flatpak
 flatpak run org.flatpak.Builder --install-deps-from=flathub --force-clean --user --install build ./io.github.anjing.yesplaymusic/io.github.anjing.yesplaymusic.yml
 ```
 
