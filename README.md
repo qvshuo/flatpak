@@ -28,7 +28,7 @@ cd flatpak
 Use the following command to install a package:
 
 ```sh
-flatpak-builder --install-deps-from=flathub --force-clean --user --install build /path/to/package.yml
+flatpak run org.flatpak.Builder --install-deps-from=flathub --force-clean --user --install build /path/to/package.yml
 ```
 
 ### Example
@@ -37,7 +37,7 @@ To install YesPlayMusic, run:
 
 ```sh
 cd flatpak
-flatpak-builder --install-deps-from=flathub --force-clean --user --install build ./io.github.anjing.yesplaymusic/io.github.anjing.yesplaymusic.yml
+flatpak run org.flatpak.Builder --install-deps-from=flathub --force-clean --user --install build ./io.github.anjing.yesplaymusic/io.github.anjing.yesplaymusic.yml
 ```
 
 ## Screenshots
