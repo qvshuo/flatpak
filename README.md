@@ -8,7 +8,7 @@ Ensure you have `flatpak` and `flatpak-builder` installed.
 
 ```sh
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo --user
-flatpak install flathub com.github.flatpak.Builder --user
+flatpak install flathub org.flatpak.Builder --user -y
 ```
 
 ### Clone the Repository
