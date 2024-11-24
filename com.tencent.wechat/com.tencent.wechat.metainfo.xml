@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.tencent.wechat</id>
+  
+  <name>WeChat</name>
+  <summary>Free messaging and calling app</summary>
+  
+  <metadata_license>MIT</metadata_license>
+  <project_license>CC-BY-4.0</project_license>
+  
+  <description>
+    <p>
+      Available for all kinds of platforms; enjoy group chat; support voice,photo,video and text messages.
+    </p>
+  </description>
+  
+  <launchable type="desktop-id">com.tencent.wechat.desktop</launchable>
+</component>

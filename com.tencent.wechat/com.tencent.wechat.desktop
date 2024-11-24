@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+
+Name=WeChat
+Comment=Free messaging and calling app
+Categories=Network;
+
+Icon=com.tencent.wechat
+Exec=wechat %U
+StartupWMClass=wechat
+Terminal=false

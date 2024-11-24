@@ -1,0 +1,64 @@
+id: com.tencent.wechat
+runtime: org.freedesktop.Platform
+runtime-version: '24.08'
+sdk: org.freedesktop.Sdk
+command: wechat
+separate-locales: false
+
+finish-args:
+  - --device=all
+  - --share=ipc
+  - --share=network
+  - --socket=pulseaudio
+  - --socket=x11
+  - --filesystem=xdg-desktop:ro
+  - --filesystem=xdg-documents:ro
+  - --filesystem=xdg-music:ro
+  - --filesystem=xdg-pictures:ro
+  - --filesystem=xdg-videos:ro
+  - --filesystem=xdg-download
+  - --filesystem=home/.xwechat:create
+  - --talk-name=org.freedesktop.FileManager1
+  - --talk-name=org.freedesktop.Notifications
+  - --talk-name=org.kde.StatusNotifierWatcher
+  - --own-name=org.kde.*
+
+modules:
+  - name: bzip2
+    no-autogen: true
+    make-args:
+       - --f=Makefile-libbz2_so
+    no-make-install: true
+    post-install:
+       - install -Dm644 libbz2.so.1.0.8 -t /app/lib/
+       - ln -s /app/lib/libbz2.so.1.0.8 /app/lib/libbz2.so.1.0
+    sources:
+      - type: archive
+        url: https://sourceware.org/pub/bzip2/bzip2-1.0.8.tar.gz
+        sha256: ab5a03176ee106d3f0fa90e381da478ddae405918153cca248e682cd0c4a2269
+
+  - name: WeChat
+    buildsystem: simple
+    build-commands:
+      - ar x wechat-linux-x64.deb
+      - tar xvJf data.tar.xz
+      - mv opt /app
+      - install -Dm755 wechat.sh /app/bin/wechat
+      - install -Dm755 dde-file-manager.sh /app/bin/dde-file-manager
+      - install -Dm644 com.tencent.wechat.desktop /app/share/applications/com.tencent.wechat.desktop
+      - install -Dm644 usr/share/icons/hicolor/256x256/apps/wechat.png /app/share/icons/hicolor/256x256/apps/com.tencent.wechat.png
+      - install -Dm644 com.tencent.wechat.metainfo.xml /app/share/metainfo/com.tencent.wechat.metainfo.xml
+
+    sources:
+      - type: file
+        url: https://dldir1v6.qq.com/weixin/Universal/Linux/WeChatLinux_x86_64.deb
+        sha256: 0e2834310e1d321da841a4cde9c657d9c086c5ee8c82d09e47eab53629a5038f
+        dest-filename: wechat-linux-x64.deb
+      - type: file
+        path: wechat.sh
+      - type: file
+        path: dde-file-manager.sh
+      - type: file
+        path: com.tencent.wechat.desktop
+      - type: file
+        path: com.tencent.wechat.metainfo.xml
