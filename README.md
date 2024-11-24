@@ -39,3 +39,24 @@ To install YesPlayMusic, run:
 cd flatpak
 flatpak-builder --install-deps-from=flathub --force-clean --user --install build ./io.github.anjing.yesplaymusic/io.github.anjing.yesplaymusic.yml
 ```
+
+## Screenshots
+
+- **Excalidraw**
+  ![Excalidraw](https://raw.githubusercontent.com/qvshuo/flatpak/refs/heads/main/screenshots/screenshots_com.excalidraw.excalidraw.png)
+
+- **WeChat**
+  ![WeChat](https://raw.githubusercontent.com/qvshuo/flatpak/refs/heads/main/screenshots/screenshots_com.tencent.wechat.jpg)
+
+- **Craft Docs**
+  ![Craft Docs](https://raw.githubusercontent.com/qvshuo/flatpak/refs/heads/main/screenshots/screenshots_do.craft.docs.png)
+
+- **YesPlayMusic**
+  ![YesPlayMusic](https://raw.githubusercontent.com/qvshuo/flatpak/refs/heads/main/screenshots/screenshots_io.github.anjing.yesplaymusic.png)
+
+- **Image Beautifier**
+  ![Image Beautifier](https://raw.githubusercontent.com/qvshuo/flatpak/refs/heads/main/screenshots/screenshots_io.github.ch563.image_beautifier.png)
+
+- **Telegram**
+  ![Telegram](https://raw.githubusercontent.com/qvshuo/flatpak/refs/heads/main/screenshots/screenshots_io.github.morethanwords.telegram.jpg)
+  
