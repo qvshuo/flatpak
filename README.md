@@ -41,21 +41,21 @@ flatpak run org.flatpak.Builder --install-deps-from=flathub --force-clean --user
 
 ## Screenshots
 
-**Excalidraw**
+**Excalidraw:** Virtual whiteboard for sketching hand-drawn like diagrams.
 ![Excalidraw](https://raw.githubusercontent.com/qvshuo/flatpak/refs/heads/main/screenshots/screenshots_com.excalidraw.excalidraw.png)
 
-**WeChat**
+**WeChat:** Free messaging and calling app.
 ![WeChat](https://raw.githubusercontent.com/qvshuo/flatpak/refs/heads/main/screenshots/screenshots_com.tencent.wechat.png)
 
-**Craft**
+**Craft:** The Future of Documents.
 ![Craft Docs](https://raw.githubusercontent.com/qvshuo/flatpak/refs/heads/main/screenshots/screenshots_do.craft.docs.png)
 
-**YesPlayMusic**
+**YesPlayMusic:** High-aesthetic third-party NetEase Cloud Music.
 ![YesPlayMusic](https://raw.githubusercontent.com/qvshuo/flatpak/refs/heads/main/screenshots/screenshots_io.github.anjing.yesplaymusic.png)
 
-**Image Beautifier**
+**Image Beautifier:** Screenshot enhancement tool.
 ![Image Beautifier](https://raw.githubusercontent.com/qvshuo/flatpak/refs/heads/main/screenshots/screenshots_io.github.ch563.image_beautifier.png)
 
-**Telegram**
+**Telegram:** Telegram Web K, GPL v3.
 ![Telegram](https://raw.githubusercontent.com/qvshuo/flatpak/refs/heads/main/screenshots/screenshots_io.github.morethanwords.telegram.png)
   
