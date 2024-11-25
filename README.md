@@ -57,5 +57,5 @@ flatpak run org.flatpak.Builder --install-deps-from=flathub --force-clean --user
   ![Image Beautifier](https://raw.githubusercontent.com/qvshuo/flatpak/refs/heads/main/screenshots/screenshots_io.github.ch563.image_beautifier.png)
 
 - **Telegram**
-  ![Telegram](https://raw.githubusercontent.com/qvshuo/flatpak/refs/heads/main/screenshots/screenshots_io.github.morethanwords.telegram.jpg)
+  ![Telegram](https://raw.githubusercontent.com/qvshuo/flatpak/refs/heads/main/screenshots/screenshots_io.github.morethanwords.telegram.png)
   
