@@ -28,15 +28,15 @@ cd flatpak
 Use the following command to install a package:
 
 ```sh
-flatpak run org.flatpak.Builder --install-deps-from=flathub --force-clean --user --install build /path/to/package.yml
+flatpak run org.flatpak.Builder --repo=local --install-deps-from=flathub --force-clean --user --install build /path/to/package.yml
 ```
 
 ### Example
 
-To install YesPlayMusic, run:
+To install WeChat, run:
 
 ```sh
-flatpak run org.flatpak.Builder --install-deps-from=flathub --force-clean --user --install build ./io.github.anjing.yesplaymusic/io.github.anjing.yesplaymusic.yml
+flatpak run org.flatpak.Builder --repo=local --install-deps-from=flathub --force-clean --user --install build ./com.tencent.wechat/com.tencent.wechat.yml
 ```
 
 ## Screenshots
