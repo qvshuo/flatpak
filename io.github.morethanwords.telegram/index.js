@@ -15,8 +15,8 @@ function createWindow() {
     title: "Telegram", // 设置窗口标题
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
-      nodeIntegration: false, // 禁用 Node 集成以增强安全性
-      contextIsolation: true, // 启用上下文隔离
+      spellcheck: false, // 禁用拼写检查
+      devTools: false, // 禁用开发者工具
     },
   });
 

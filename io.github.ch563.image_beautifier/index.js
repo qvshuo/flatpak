@@ -8,8 +8,8 @@ function createWindow() {
     height: 900,
     title: "Image Beautifier", // 设置窗口标题
     webPreferences: {
-      nodeIntegration: false, // 禁用 Node 集成以增强安全性
-      contextIsolation: true, // 启用上下文隔离
+      spellcheck: false, // 禁用拼写检查
+      devTools: false, // 禁用开发者工具
     },
   });
 
