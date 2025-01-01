@@ -7,8 +7,8 @@
 Ensure you have `flatpak` and `flatpak-builder` installed.
 
 ```sh
-flatpak --user remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak --user install flathub org.flatpak.Builder -y
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo --user
+flatpak install flathub org.flatpak.Builder -y --user
 ```
 
 ### Clone the Repository
@@ -28,7 +28,7 @@ cd flatpak
 Use the following command to install a package:
 
 ```sh
-flatpak --user run org.flatpak.Builder --repo=local --install-deps-from=flathub --force-clean --install build /path/to/package.yml
+flatpak run org.flatpak.Builder --repo=local --install-deps-from=flathub --force-clean --user --install build /path/to/package.yml
 ```
 
 ### Example
@@ -36,7 +36,7 @@ flatpak --user run org.flatpak.Builder --repo=local --install-deps-from=flathub 
 To install WeChat, run:
 
 ```sh
-flatpak --user run org.flatpak.Builder --repo=local --install-deps-from=flathub --force-clean --install build ./com.tencent.wechat/com.tencent.wechat.yml
+flatpak run org.flatpak.Builder --repo=local --install-deps-from=flathub --force-clean --user --install build ./com.tencent.wechat/com.tencent.wechat.yml
 ```
 
 ## Screenshots
