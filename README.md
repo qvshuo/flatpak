@@ -41,9 +41,6 @@ flatpak run org.flatpak.Builder --repo=local --install-deps-from=flathub --force
 
 ## Screenshots
 
-**Excalidraw:** Virtual whiteboard for sketching hand-drawn like diagrams.
-![Excalidraw](https://raw.githubusercontent.com/qvshuo/flatpak/refs/heads/main/screenshots/screenshots_com.excalidraw.excalidraw.png)
-
 **WeChat:** Free messaging and calling app.
 ![WeChat](https://raw.githubusercontent.com/qvshuo/flatpak/refs/heads/main/screenshots/screenshots_com.tencent.wechat.png)
 
